@@ -38,7 +38,7 @@ class TwoWayList
     current = get_node_at(index)
     new_node = TwoWayNode.new(value)
     if current == nil
-      return nil
+      return false
     elsif current == @head
       new_node.next = @head
       @head = new_node
@@ -53,6 +53,7 @@ class TwoWayList
       current.previous = new_node
       new_node.previous.next = new_node
     end
+    return true
   end
 
   def get_at(index)
